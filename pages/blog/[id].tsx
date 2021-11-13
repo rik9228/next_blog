@@ -5,11 +5,13 @@ export default function BlogId({ blog }) {
     <main className="max-w-screen-xl mx-auto mt-10">
       <h1 className="text-2xl">{blog.title}</h1>
       <p className="mt-5">{blog.publishedAt}</p>
-      <p className="mt-5">{blog.category && `${blog.category.name}`}</p>
+      <p className="mt-5">カテゴリー：{blog.category && `${blog.category.name}`}</p>
+      <p className="mt-5">タグ：{blog.tag && `${blog.tag.name}`}</p>
       <div
         dangerouslySetInnerHTML={{
           __html: `${blog.body}`,
         }}
+        className="mt-10"
       />
     </main>
   );
